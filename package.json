@@ -39,7 +39,8 @@
     "request": "^2.72.0",
     "semver": "^5.1.0",
     "symbol": "^0.2.1",
-    "unix-crypt-td-js": "^1.0.0"
+    "unix-crypt-td-js": "^1.0.0",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "rimraf": "^2.5.2",
@@ -70,7 +71,9 @@
     "test": "eslint . && mocha ./test/functional ./test/unit",
     "test-travis": "eslint . && mocha -R spec ./test/functional ./test/unit",
     "test-only": "mocha ./test/functional ./test/unit",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=0.10"
@@ -79,5 +82,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "snyk": true
 }
